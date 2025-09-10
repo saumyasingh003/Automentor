@@ -4,12 +4,13 @@ import { ErrorBoundary } from "react-error-boundary";
 import { Suspense } from "react";
 import { AgentIdView, AgentsIdViewError, AgentsIdViewLoading } from "@/modules/agents/ui/views/agentIdView";
 
+
 interface Props {
-  params: { agentId: string };
+  params: Promise<{ agentId: string }>;
 }
 
 const Page = async ({ params }: Props) => {
-  const { agentId } =  await params;
+  const { agentId } = await params;
 
   const queryClient = getQueryClient();
   void queryClient.prefetchQuery(

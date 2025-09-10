@@ -63,10 +63,9 @@ export const meetingsProcessing = inngest.createFunction(
       if (transcript.length > 0) {
         console.log(`First timestamp: ${transcript[0].start_ts} (type: ${typeof transcript[0].start_ts})`);
         console.log(`Last timestamp: ${transcript[transcript.length - 1].start_ts} (type: ${typeof transcript[transcript.length - 1].start_ts})`);
-        
         // Calculate meeting duration for debugging
-        const firstTs = typeof transcript[0].start_ts === 'number' ? transcript[0].start_ts : new Date(transcript[0].start_ts).getTime();
-        const lastTs = typeof transcript[transcript.length - 1].start_ts === 'number' ? transcript[transcript.length - 1].start_ts : new Date(transcript[transcript.length - 1].start_ts).getTime();
+        const firstTs = new Date(transcript[0].start_ts).getTime();
+        const lastTs = new Date(transcript[transcript.length - 1].start_ts).getTime();
         const durationSeconds = Math.floor((lastTs - firstTs) / 1000);
         console.log(`Meeting duration: ${durationSeconds} seconds`);
       }
@@ -126,7 +125,7 @@ export const meetingsProcessing = inngest.createFunction(
           // Check if timestamp is already in milliseconds (number) or needs parsing
           if (typeof item.start_ts === 'number') {
             startTimeMs = item.start_ts;
-            meetingStartTimeMs = transcriptWithSpeakers[0].start_ts as number;
+            meetingStartTimeMs = new Date(transcriptWithSpeakers[0].start_ts).getTime();
           } else {
             // Try parsing as date string
             startTimeMs = new Date(item.start_ts).getTime();

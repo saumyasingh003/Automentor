@@ -101,7 +101,7 @@ export const SignUpView = () => {
               className="flex flex-col gap-6"
             >
               <div className="flex flex-col items-center text-center">
-                <h1 className="text-3xl font-bold">Let's Get Started!</h1>
+                <h1 className="text-3xl font-bold">Let&apos;s Get Started!</h1>
                 <p className="text-muted-foreground text-balance">
                   Create your account
                 </p>
