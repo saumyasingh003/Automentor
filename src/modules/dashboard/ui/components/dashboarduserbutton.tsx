@@ -86,7 +86,7 @@ export const DashboardUserButton = () => {
               <div className="flex items-center gap-1 mt-1">
                 <Badge className={`text-xs ${getPlanInfo(userData.plan).color}`}>
                   {getPlanInfo(userData.plan).icon && (() => {
-                    const IconComponent = getPlanInfo(userData.plan).icon;
+                    const IconComponent = getPlanInfo(userData.plan).icon as React.ElementType;
                     return <IconComponent className="h-3 w-3 mr-1" />;
                   })()}
                   {getPlanInfo(userData.plan).label}
@@ -103,7 +103,7 @@ export const DashboardUserButton = () => {
                 <div className="flex items-center gap-2">
                   <Badge className={getPlanInfo(userData.plan).color}>
                     {getPlanInfo(userData.plan).icon && (() => {
-                      const IconComponent = getPlanInfo(userData.plan).icon;
+                      const IconComponent = getPlanInfo(userData.plan).icon as React.ElementType;
                       return <IconComponent className="h-3 w-3 mr-1" />;
                     })()}
                     {getPlanInfo(userData.plan).label} Plan
@@ -155,7 +155,7 @@ export const DashboardUserButton = () => {
             <div className="flex items-center gap-1 mt-1">
               <Badge className={`text-xs ${getPlanInfo(userData.plan).color}`}>
                 {getPlanInfo(userData.plan).icon && (() => {
-                  const IconComponent = getPlanInfo(userData.plan).icon;
+                  const IconComponent = getPlanInfo(userData.plan).icon as React.ElementType;
                   return <IconComponent className="h-3 w-3 mr-1" />;
                 })()}
                 {getPlanInfo(userData.plan).label}
@@ -180,7 +180,7 @@ export const DashboardUserButton = () => {
               <div className="flex items-center gap-2 mt-1">
                 <Badge className={getPlanInfo(userData.plan).color}>
                   {getPlanInfo(userData.plan).icon && (() => {
-                    const IconComponent = getPlanInfo(userData.plan).icon;
+                    const IconComponent = getPlanInfo(userData.plan).icon as React.ElementType;
                     return <IconComponent className="h-3 w-3 mr-1" />;
                   })()}
                   {getPlanInfo(userData.plan).label} Plan
