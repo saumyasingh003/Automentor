@@ -25,7 +25,7 @@ interface PaymentSimulationProps {
 export const PaymentSimulation = ({ plan, onSuccess, onCancel }: PaymentSimulationProps) => {
   const [step, setStep] = useState<'form' | 'processing' | 'success'>('form');
   const [formData, setFormData] = useState({
-    cardNumber: '',
+  cardNumber: '',
     expiryDate: '',
     cvv: '',
     name: '',

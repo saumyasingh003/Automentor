@@ -22,7 +22,7 @@ import {
 import Link from "next/link";
 
 interface Props {
-  meetingId: String;
+  meetingId: string;
   meetingName: string;
   onEdit: () => void;
   onRemove: () => void;
