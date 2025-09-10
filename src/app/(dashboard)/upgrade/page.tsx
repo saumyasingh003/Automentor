@@ -1,4 +1,4 @@
-"use client";
+export const dynamic = "force-dynamic";
 
 import { UpgradeView } from "@/modules/upgrade/ui/views/upgrade-view";
 
