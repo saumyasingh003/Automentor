@@ -26,7 +26,7 @@ const firstSection = [
   {
     icon: Info,
     label: "About",
-  href: "/dashboard/about",
+    href: "/about",
   },
   {
     icon: IoVideocam,
